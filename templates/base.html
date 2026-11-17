@@ -1,0 +1,5 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}FarmChain{% endblock %}</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><header class="top"><a class="brand" href="/">🌱 FarmChain</a><nav><a href="/">Dashboard</a><a href="/add">Add Product</a><a href="/products">Products</a><a href="/track">Track</a><a href="/verify">Verify Ledger</a></nav></header>
+<main class="wrap">{% with messages=get_flashed_messages(with_categories=true) %}{% if messages %}{% for category,message in messages %}<div class="alert {{category}}">{{message}}</div>{% endfor %}{% endif %}{% endwith %}
+{% block content %}{% endblock %}</main><footer>FarmChain · Transparent farm-to-customer traceability</footer></body></html>
